@@ -10,7 +10,10 @@
 
 - tools缺少，下载tools文件夹，导入/opt/ql/scripts/AutMan7_AM这个目录下（根据自己目录而定，仅供参考）
 
-- pycryptodome缺少，打开ql控制面板-依赖管理  liunx安装build-base libc-dev python3-dev gcc python安装pycryptodome requests（必须先安装Linux再安装python，否则会报错） 
+- pycryptodome缺少，打开QL控制面板-依赖管理  
+- 1.Linux：安装build-base libc-dev python3-dev gcc 
+- 2.python：安装pycryptodome requests
+- 注：必须先安装Linux再安装python，否则会报错
 
 ## 环境变量说明:
     - 1.联通营业厅app(china_unicom.py)
