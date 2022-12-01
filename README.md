@@ -4,33 +4,40 @@
 - 本仓库脚本仅供用于学习及参考对应web/app的参数解密并提供对应demo用于测试,请不要询问如何多账号等
 - 食用方法都在脚本内,请自行查看。
 - 觉得好用可以点个star。
-## 使用方法
-
-只讨论电信直播脚本问题，别的问题自行解决哈
-
-缺失tools模块就下载上面的tools文件夹放到/root/ql/scripts/WWJqingcheng_dx这个目录下
-
-缺失tool模块直接在python依赖里面安装tool
-
-缺失pycryptodome的！！！！！先在装liunx装build-base依赖再去python装pycryptodome
-
-出现只查询，查询完就结束的，请查看自己的环境变量设置对了没有！！！！！！！！TELECOM_LOTTERY=手机号1&密码1换行手机号2&密码2   
-
-环境变量名称：TELECOM_LOTTERY
-
-值：手机号1&密码1换行手机号2&密码2换行手机号3&密码3......
 
 
+## 以下常见问题：
+
+- tools缺少，下载tools文件夹，导入/opt/ql/scripts/AutMan7_AM这个目录下（根据自己目录而定，仅供参考）
+
+- pycryptodome缺少，先在装liunx装build-base libc-dev python3-dev gcc 依赖再去python装pycryptodome requests 
+
+## 环境变量说明:
+    - 1.联通营业厅app(china_unicom.py)
+    - PHONE_NUM 手机号码 (必须)
+    - UNICOM_LOTTER 是否自动抽奖 (选填 True | False, 默认为是)
+    
+    - 2.电信营业厅app(china_telecom.py  telecom_live_lotter.py)
+    -TELECOM_LOTTERY 手机号码@密码 (密码中间以@分隔，多账号用&链接) 如：export TELECOM_LOTTERY ="189********@123456&199********@123456"
+    - TELECOM_FOOD 宠物喂食次数 (选择)
+    
+    - 3.iqiyi(iqiyi.py & iqiyiRed.py)
+    - iqy_ck 爱奇艺cookie 可整段 也可只保留P00001=xxx; (必须)
+    - get_iqiyi_dfp 是否请求我的api来获取参数 再去请求爱奇艺的api来获取dfp dfp类似于设备号 cookie字段内有 (选择 True | False 默认为否)
+    - sleep_await 因观影时长同步有延迟 故建议完成任务后等待几分钟再查询 (选填 True | False 默认为是)
+    
 ### . 青龙面板
 - 拉取仓库
  
-ql repo https://github.ruirui.fun/https://github.com/WWJqingcheng/dx.git "" "backUp|tools|JS|logs|login"  "tools|JS|logs|login"
+  ql repo https://github.com/AutMan7/AM.git "" "backUp|tools|JS|logs|login"  "tools|JS|logs|login"
+  
+  国内服务器
+  ql repo https://github.ruirui.fun/https://github.com/AutMan7/AM.git "" "backUp|tools|JS|logs|login"  "tools|JS|logs|login"
 
 
 
 
-## 环境变量说明 
-- 一.推送
+## 推送 
   - 1.tgbot 
     - TG_USER_ID  tg用户id
     - TG_BOT_TOKEN tgbot的token
@@ -39,22 +46,7 @@ ql repo https://github.ruirui.fun/https://github.com/WWJqingcheng/dx.git "" "bac
   - 2.pushplus
     - PUSH_PLUS_TOKEN 推送加的token
     - PUSH_PLUS_TOKEN_ADDED (可选) 同上面的TG_BOT_TOKEN_ADDED
-- 二.脚本内变量 (**<big>具体参照脚本文件内的说明</big>**)
-  - 1. 联通营业厅app(china_unicom.py)
-    - PHONE_NUM 手机号码 (必须)
-    - UNICOM_LOTTER 是否自动抽奖 (选填 True | False, 默认为是)
-  - 2. 电信营业厅app(china_telecom.py)
-    - TELECOM_PHONE 手机号码 (必须)
-    - TELECOM_PASSWORD 电信服务密码 (选择)
-    - TELECOM_FOOD 宠物喂食次数 (选择)
-  - 3. iqiyi(iqiyi.py & iqiyiRed.py)
-    - iqy_ck 爱奇艺cookie 可整段 也可只保留P00001=xxx; (必须)
-    - get_iqiyi_dfp 是否请求我的api来获取参数 再去请求爱奇艺的api来获取dfp dfp类似于设备号 cookie字段内有 (选择 True | False 默认为否)
-    - sleep_await 因观影时长同步有延迟 故建议完成任务后等待几分钟再查询 (选填 True | False 默认为是)
-  - 4. 无忧行app(wxy.py)
-    - WXY_TOKEN 无忧行app内的token (必须)
-  - 5. 顺丰速运(sfexpress.py)
-    - SF_SIGN 顺丰app的sign (必须)
+
 ## 文件目录说明
 - 主目录 -- 存放主文件
 - Tools -- 存放一些脚本内经常需要重复使用的工具
