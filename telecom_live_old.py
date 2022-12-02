@@ -179,7 +179,7 @@ def main(phone, password):
         data = get(url, timeout=5).json()
     except:
         try:
-            url = "https://gitee.com/kele2233/genxin/raw/master/telecomLiveInfo.json"
+            url = "https://gitcode.net/woshitezhonglang/telecomliveinfo/-/raw/master/telecomLiveInfo.json"
             data = get(url, timeout=5).json()
         except:
             url = "https://xbk.189.cn/xbkapi/lteration/index/recommend/anchorRecommend?provinceCode=01"
