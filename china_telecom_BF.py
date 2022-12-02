@@ -4,16 +4,16 @@
 # @Author : github@limoruirui https://github.com/limoruirui
 # @Time : 2022/9/12 16:10
 # cron "1 9,12 * * *" script-path=xxx.py,tag=匹配cron用
-# const $ = new Env('电信签到');
+# const $ = new Env('电信签到—并发版');
 # -------------------------------
 
 """
 1. 电信签到 不需要抓包 脚本仅供学习交流使用, 请在下载后24h内删除
 2. cron说明 12点必须执行一次(用于兑换) 然后12点之外还需要执行一次(用于执行每日任务) 一天共两次 可直接使用默认cron
 2. 环境变量说明:
-    必须  TELECOM : 电信手机号@电信服务密码@宠物喂食次数(默认0,最大10)&手机号2@密码2@喂食数2
-    # TELECOM       13311111111@111111@0&13322222222@222222@10
-    并发命令：task WWJqingcheng_dx/china_telecom2.py conc TELECOM
+    必须  TELECOM : 电信手机号@电信服务密码@宠物喂食次数(默认0,最大10)&手机号2@密码2@喂食数5
+    变量  export TELECOM ="189********@123456@0&199********@123456@5"
+    并发命令：task AutMan7_AM/china_telecom_BF.py conc TELECOM
     task 后边是脚本所在目录/china_telecom2.py conc TELECOM
 3. 必须登录过 电信营业厅 app的账号才能正常运行
 """
