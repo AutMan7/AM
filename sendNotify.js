@@ -234,7 +234,7 @@ async function sendNotify(
   text,
   desp,
   params = {},
-  author = '\n\n本通知 By：https://github.com/whyour/qinglong',
+  author = '\n\n本通知 By：https://github.com/AutMan7',
 ) {
   //提供6种通知
   desp += author; //增加作者信息，防止被贩卖等
