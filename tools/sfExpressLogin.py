@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # -- coding: utf-8 --
 # -------------------------------
-# @Author : github@AutMan7 https://github.com/AutMan7/TEL.git
-# @Time : 2022/9/16 17:20
+# @Author : github@AutMan7 https://github.com/AutMan7/AM.git
+# @Time : 2022/12/05 17:20
 # -------------------------------
 from json import dumps
 from requests import post
