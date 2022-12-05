@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -- coding: utf-8 --
 # -------------------------------
-# @Author : github@limoruirui https://github.com/limoruirui
+# @Author : github@AutMan7 https://github.com/AutMan7/AM.git
 # @Time : 2022/10/6 0:18
 # -------------------------------
 """
