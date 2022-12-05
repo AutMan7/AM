@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # -- coding: utf-8 --
 # -------------------------------
-# @Author : github@limoruirui https://github.com/limoruirui
-# @Time : 2022/8/22 17:56
+# @Author : github@AutMan7 https://github.com/AutMan7/AM.git
+# @Time : 2022/12/01 17:56
 # -------------------------------
 """
 封装一些工具
