@@ -5,6 +5,9 @@
 - 食用方法都在脚本内,请自行查看。
 - 觉得好用可以点个star。
 
+# 京东车：http://jd.jdv4.top
+# 频道：https://t.me/jd_v4
+
 
 ## 以下常见问题：
 
@@ -28,6 +31,13 @@
     - iqy_ck 爱奇艺cookie 可整段 也可只保留P00001=xxx; (必须)
     - get_iqiyi_dfp 是否请求我的api来获取参数 再去请求爱奇艺的api来获取dfp dfp类似于设备号 cookie字段内有 (选择 True | False 默认为否)
     - sleep_await 因观影时长同步有延迟 故建议完成任务后等待几分钟再查询 (选填 True | False 默认为是)
+    
+    - 4.无忧行app(wxy.py)
+    - WXY_TOKEN 无忧行app内的token (必须)
+    
+    - 5.顺丰速运(sfexpress.py)
+    - SF_SIGN 顺丰app的sign (必须)
+    
     
 ### . 青龙面板
 - 拉取仓库
