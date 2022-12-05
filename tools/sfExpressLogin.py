@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -- coding: utf-8 --
 # -------------------------------
-# @Author : github@limoruirui https://github.com/limoruirui
+# @Author : github@AutMan7 https://github.com/AutMan7/TEL.git
 # @Time : 2022/9/16 17:20
 # -------------------------------
 from json import dumps
