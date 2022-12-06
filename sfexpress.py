@@ -4,7 +4,7 @@
 # @Author : github@AutMan7 https://github.com/AutMan7/AM.git
 # @Time : 2022/8/1 23:33
 # -------------------------------
-# cron ""
+# cron "3,15 8-11 * * *"
 # const $ = new Env('沙发速运签到');
 """
 1. 某快递app签到 脚本仅供学习交流使用, 请在下载后24h内删除
