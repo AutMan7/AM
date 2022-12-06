@@ -13,9 +13,6 @@ cron ：3,15 8-11 * * *
 
 
 */
-# @Author : github@AutMan7 https://github.com/AutMan7/AM.git
-# @Time : 2022/12/06 20:33
-# cron "3,15 8-11 * * *"
  
 const $ = new Env('牙e家');
 const axios = require('axios');
