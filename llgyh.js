@@ -6,8 +6,7 @@
 抓包： 微信小程序：#小程序://工友会/gJ3FM1u2klgnGZl   每天自动抽奖
 抓包域名gateway.gyhapp.com
 查看请求头的lanlinker-satoken
-变量格式：export gongyouhd=''
-多账户@隔开或者换行符隔开
+变量格式：export gongyouhd=''  多账户@隔开或者换行符隔开
 
 
 定时：
