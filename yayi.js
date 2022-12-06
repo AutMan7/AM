@@ -1,9 +1,17 @@
 /*
-APP：牙e家
-设置密码
-export yayihd='手机号&密码'
+来源 : github@AutMan7 https://github.com/AutMan7/AM.git
+日期: 2022/12/06 20:33
+
+抓包：APP：牙e家  
+
+
+变量格式：export yayihd='手机号&密码'
 多号@或换行隔开
-10话费
+备注：设置账号，密码登录模式
+定时：
+cron ：3,15 8-11 * * *
+
+
 */
 # @Author : github@AutMan7 https://github.com/AutMan7/AM.git
 # @Time : 2022/12/06 20:33
