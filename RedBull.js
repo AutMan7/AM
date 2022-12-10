@@ -1,0 +1,865 @@
+/*
+来源 : github@AutMan7 https://github.com/AutMan7/AM.git
+日期: 2022/12/10 21:20
+
+抓包：小程序:红牛能量俱乐部
+
+
+抓取redbullapi.rrfenwo.com域名
+查看请求头的x-token
+
+变量格式：export redbullhd='' 多账户@隔开
+抽奖开关变量
+export redbullcj='' true开启 不填默认关闭
+
+*/
+// corn 0 */3 * * *
+
+const $ = new Env('红牛');
+const axios = require('axios');
+const CryptoJS = require('crypto-js')
+let request = require("request");
+request = request.defaults({
+    jar: true
+});
+const {
+    log
+} = console;
+const Notify = 1; //0为关闭通知，1为打开通知,默认为1
+const debug = 0; //0为关闭调试，1为打开调试,默认为0
+
+let redbullhd = ($.isNode() ? process.env.redbullhd : $.getdata("redbullhd")) || ""
+let redbullcj = ($.isNode() ? process.env.redbullcj : $.getdata("redbullcj")) || ""
+let redbullhdArr = [];
+let data = '';
+let msg = '';
+var hours = new Date().getMonth();
+var key = CryptoJS.enc.Utf8.parse("ABCDEFGHIJKLMNOP");
+var iv = CryptoJS.enc.Utf8.parse("redbulltest12345");
+var timestamp = Math.round(new Date().getTime()/1000).toString();
+!(async () => {
+    if (typeof $request !== "undefined") {
+        await GetRewrite();
+    } else {
+        if (!(await Envs()))
+            return;
+        else {
+
+            log(`\n\n=============================================    \n脚本执行 - 北京时间(UTC+8)：${new Date(
+                new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000 +
+                8 * 60 * 60 * 1000).toLocaleString()} \n=============================================\n`);
+
+
+
+            log(`\n============ 微信公众号：AutMan福利社 ============`)
+            log(`\n=================== 共找到 ${redbullhdArr.length} 个账号 ===================`)
+            if (debug) {
+                log(`【debug】 这是你的全部账号数组:\n ${redbullhdArr}`);
+            }
+            for (let index = 0; index < redbullhdArr.length; index++) {
+
+                let num = index + 1
+                addNotifyStr(`\n==== 开始【第 ${num} 个账号】====\n`, true)
+
+                redbullhd = redbullhdArr[index];
+                  await requests('getUserInfo','"state":1',{})
+                  log('====获取叼毛信息====')
+                  log('叼毛：'+res.nickname+' \n积分：'+res.integral+' \n等级：'+res.levelLabel+' \n叼毛ID:'+res.userId)
+                  log('\n本叼毛懒 直接5连拉倒')
+                  
+
+                  for (let i=0; i<4;i++){
+                  if (redbullcj =true){
+                  await requests('getLuckDraw','"type":1','type=1')    
+                  }else
+                  log('\n当前抽奖默认关闭\n如需开启变量export redbullcj=true\n搏一搏单车变摩托')   
+                  await requests('submitSubscribe','"state":1','state=1')
+                  log('====提交====')
+                  log(res)
+                  await requests('submitInviteSubscribe','"state":1','state=1')
+                  //log('====提交====')
+                  log(res)
+
+                  //log('====提交====')
+                  log(res)                                                                                                                                                                                                                          
+                  await requests('submitShareTask','"type":1','type=1')
+                  //log('====提交====')
+                  log(res)    
+                  await requests('submitDrawSubscribe','"state":1','state=1')
+                  //log('====提交====')
+                  log(res)  
+                  await requests('submitShareTask','"type":2','type=2')
+                  //log('====提交====')
+                  log(res)
+                  await requests('submitShareTask','"type":3','type=3')
+                  //log('====提交====')
+                  log(res) 
+                  await requests('submitClickStatistics','"type":6,"action":"任务页面访问商城","desc":"pages/item/detail/detail?cover=https://m.360buyimg.com/mobilecms/s320x320_jfs/t1/69407/12/20414/283842/62d8fc48E2ac46a77/8645c44e2d45429e.jpg!q70.jpg&utm_term=Wxfriends&utm_campaign=t_335139774&price=144.00&utm_medium=appshare&name=红牛（RedBull）维生素牛磺酸饮料 250ml*24罐/整箱 &sku=100032110999&utm_source=iosapp"','type=6&action=%E4%BB%BB%E5%8A%A1%E9%A1%B5%E9%9D%A2%E8%AE%BF%E9%97%AE%E5%95%86%E5%9F%8E&desc=pages%2Fitem%2Fdetail%2Fdetail%3Fcover%3Dhttps%3A%2F%2Fm.360buyimg.com%2Fmobilecms%2Fs320x320_jfs%2Ft1%2F69407%2F12%2F20414%2F283842%2F62d8fc48E2ac46a77%2F8645c44e2d45429e.jpg!q70.jpg%26utm_term%3DWxfriends%26utm_campaign%3Dt_335139774%26price%3D144.00%26utm_medium%3Dappshare%26name%3D%E7%BA%A2%E7%89%9B%EF%BC%88RedBull%EF%BC%89%E7%BB%B4%E7%94%9F%E7%B4%A0%E7%89%9B%E7%A3%BA%E9%85%B8%E9%A5%AE%E6%96%99%20250ml*24%E7%BD%90%2F%E6%95%B4%E7%AE%B1%20%26sku%3D100032110999%26utm_source%3Diosapp')
+                  //log('====提交====')
+                  log(res) 
+                  await requests('submitInviteSubscribe','"state":1','state=1')
+                  //log('====提交====')
+                  log(res)   
+                  await requests('submitClickStatistics','"type":5,"action":"福利","desc":"/integralMall"','type=5&action=%E7%A6%8F%E5%88%A9&desc=%2FintegralMall')
+                  //log('====提交====')
+                  log(res)  
+                  await requests('submitClickStatistics','"type":3,"action":"跳转抽奖","desc":"/lottery"','type=3&action=%E8%B7%B3%E8%BD%AC%E6%8A%BD%E5%A5%96&desc=%2Flottery')
+                  //log('====提交====')
+                  log(res) 
+                  log('====兑换E卡====')
+                  await requests('submitFictitiousOrder','"number":1,"goodsId":9,"integral":2000','number=1&goodsId=9&integral=2000')
+
+                  log(res)                   
+                  }
+                  await requests('getUserInfo','"state":1',{})
+                  log('====获取叼毛信息====')
+                  log('叼毛：'+res.nickname+' \n积分：'+res.integral+' \n等级：'+res.levelLabel+' \n叼毛ID:'+res.userId)
+            }
+            //await SendMsg(msg);
+        }
+    }
+})()
+.catch((e) => log(e))
+    .finally(() => $.done())
+async function requests(api,sign,body) {
+    return new Promise((resolve) => {
+
+var options = {
+  method: 'POST',
+  url: 'https://redbullapi.rrfenwo.com/wechat/'+api,
+  headers: {
+    Host: 'redbullapi.rrfenwo.com',
+    Connection: 'keep-alive',
+    xweb_xhr: '1',
+    'x-token': redbullhd,
+    'user-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 MicroMessenger/7.0.4.501 NetType/WIFI MiniProgramEnv/Windows WindowsWechat/WMPF',
+    sign: AES_Encrypt('{'+sign+',"requestTime":'+timestamp+'}'),
+    'Content-Type': 'application/x-www-form-urlencoded',
+    Accept: '*/*',
+    'Sec-Fetch-Site': 'cross-site',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Dest': 'empty',
+    Referer: 'https://servicewechat.com/wx5549b5fa9842e321/11/page-frame.html',
+    'Accept-Language': 'en-us,en',
+    'Accept-Encoding': 'gzip, deflate'
+  },
+  data: body
+};
+        if (debug) {
+            log(`\n【debug】=============== 这是  请求 url ===============`);
+            log(JSON.stringify(options));
+        }
+        axios.request(options).then(async function(response) {
+            try {
+                var data = response.data;
+                if (debug) {
+                    log(`\n\n【debug】===============这是 返回data==============`);
+                    log(data)
+                }
+                if (data.code == 0) {
+                res =  JSON.parse(AES_Decrypt(data.data))
+                 
+                }else log(data.message)
+                
+            } catch (e) {
+                log(`异常：${data}，原因：${data.errorMsg}`)
+            }
+        }).catch(function(error) {
+            console.error(error);
+        }).then(res => {
+            //这里处理正确返回
+            resolve();
+        });
+    })
+
+}
+
+
+
+
+
+
+
+function AES_Encrypt(word) {
+    var srcs = CryptoJS.enc.Utf8.parse(word);
+    var encrypted = CryptoJS.AES.encrypt(srcs, key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    return encrypted.toString();
+    
+}
+
+function AES_Decrypt(word) {
+    var srcs = word;
+    var decrypt = CryptoJS.AES.decrypt(srcs, key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    return decrypt.toString(CryptoJS.enc.Utf8);
+}
+
+
+
+
+async function Envs() {
+    if (redbullhd) {
+        if (redbullhd.indexOf("@") != -1) {
+            redbullhd.split("@").forEach((item) => {
+
+                redbullhdArr.push(item);
+            });
+        } else if (redbullhd.indexOf("\n") != -1) {
+            redbullhd.split("\n").forEach((item) => {
+                redbullhdArr.push(item);
+            });
+        } else {
+            redbullhdArr.push(redbullhd);
+        }
+    } else {
+        log(`\n 【${$.name}】：未填写变量 redbullhd`)
+        return;
+    }
+
+    return true;
+}
+
+function md5(inputString) {
+    var hc = "0123456789abcdef";
+
+    function rh(n) {
+        var j, s = "";
+        for (j = 0; j <= 3; j++) s += hc.charAt((n >> (j * 8 + 4)) & 0x0F) + hc.charAt((n >> (j * 8)) & 0x0F);
+        return s;
+    }
+
+    function ad(x, y) {
+        var l = (x & 0xFFFF) + (y & 0xFFFF);
+        var m = (x >> 16) + (y >> 16) + (l >> 16);
+        return (m << 16) | (l & 0xFFFF);
+    }
+
+    function rl(n, c) {
+        return (n << c) | (n >>> (32 - c));
+    }
+
+    function cm(q, a, b, x, s, t) {
+        return ad(rl(ad(ad(a, q), ad(x, t)), s), b);
+    }
+
+    function ff(a, b, c, d, x, s, t) {
+        return cm((b & c) | ((~b) & d), a, b, x, s, t);
+    }
+
+    function gg(a, b, c, d, x, s, t) {
+        return cm((b & d) | (c & (~d)), a, b, x, s, t);
+    }
+
+    function hh(a, b, c, d, x, s, t) {
+        return cm(b ^ c ^ d, a, b, x, s, t);
+    }
+
+    function ii(a, b, c, d, x, s, t) {
+        return cm(c ^ (b | (~d)), a, b, x, s, t);
+    }
+
+    function sb(x) {
+        var i;
+        var nblk = ((x.length + 8) >> 6) + 1;
+        var blks = new Array(nblk * 16);
+        for (i = 0; i < nblk * 16; i++) blks[i] = 0;
+        for (i = 0; i < x.length; i++) blks[i >> 2] |= x.charCodeAt(i) << ((i % 4) * 8);
+        blks[i >> 2] |= 0x80 << ((i % 4) * 8);
+        blks[nblk * 16 - 2] = x.length * 8;
+        return blks;
+    }
+
+    var i, x = sb(inputString),
+        a = 1732584193,
+        b = -271733879,
+        c = -1732584194,
+        d = 271733878,
+        olda, oldb, oldc, oldd;
+    for (i = 0; i < x.length; i += 16) {
+        olda = a;
+        oldb = b;
+        oldc = c;
+        oldd = d;
+        a = ff(a, b, c, d, x[i + 0], 7, -680876936);
+        d = ff(d, a, b, c, x[i + 1], 12, -389564586);
+        c = ff(c, d, a, b, x[i + 2], 17, 606105819);
+        b = ff(b, c, d, a, x[i + 3], 22, -1044525330);
+        a = ff(a, b, c, d, x[i + 4], 7, -176418897);
+        d = ff(d, a, b, c, x[i + 5], 12, 1200080426);
+        c = ff(c, d, a, b, x[i + 6], 17, -1473231341);
+        b = ff(b, c, d, a, x[i + 7], 22, -45705983);
+        a = ff(a, b, c, d, x[i + 8], 7, 1770035416);
+        d = ff(d, a, b, c, x[i + 9], 12, -1958414417);
+        c = ff(c, d, a, b, x[i + 10], 17, -42063);
+        b = ff(b, c, d, a, x[i + 11], 22, -1990404162);
+        a = ff(a, b, c, d, x[i + 12], 7, 1804603682);
+        d = ff(d, a, b, c, x[i + 13], 12, -40341101);
+        c = ff(c, d, a, b, x[i + 14], 17, -1502002290);
+        b = ff(b, c, d, a, x[i + 15], 22, 1236535329);
+        a = gg(a, b, c, d, x[i + 1], 5, -165796510);
+        d = gg(d, a, b, c, x[i + 6], 9, -1069501632);
+        c = gg(c, d, a, b, x[i + 11], 14, 643717713);
+        b = gg(b, c, d, a, x[i + 0], 20, -373897302);
+        a = gg(a, b, c, d, x[i + 5], 5, -701558691);
+        d = gg(d, a, b, c, x[i + 10], 9, 38016083);
+        c = gg(c, d, a, b, x[i + 15], 14, -660478335);
+        b = gg(b, c, d, a, x[i + 4], 20, -405537848);
+        a = gg(a, b, c, d, x[i + 9], 5, 568446438);
+        d = gg(d, a, b, c, x[i + 14], 9, -1019803690);
+        c = gg(c, d, a, b, x[i + 3], 14, -187363961);
+        b = gg(b, c, d, a, x[i + 8], 20, 1163531501);
+        a = gg(a, b, c, d, x[i + 13], 5, -1444681467);
+        d = gg(d, a, b, c, x[i + 2], 9, -51403784);
+        c = gg(c, d, a, b, x[i + 7], 14, 1735328473);
+        b = gg(b, c, d, a, x[i + 12], 20, -1926607734);
+        a = hh(a, b, c, d, x[i + 5], 4, -378558);
+        d = hh(d, a, b, c, x[i + 8], 11, -2022574463);
+        c = hh(c, d, a, b, x[i + 11], 16, 1839030562);
+        b = hh(b, c, d, a, x[i + 14], 23, -35309556);
+        a = hh(a, b, c, d, x[i + 1], 4, -1530992060);
+        d = hh(d, a, b, c, x[i + 4], 11, 1272893353);
+        c = hh(c, d, a, b, x[i + 7], 16, -155497632);
+        b = hh(b, c, d, a, x[i + 10], 23, -1094730640);
+        a = hh(a, b, c, d, x[i + 13], 4, 681279174);
+        d = hh(d, a, b, c, x[i + 0], 11, -358537222);
+        c = hh(c, d, a, b, x[i + 3], 16, -722521979);
+        b = hh(b, c, d, a, x[i + 6], 23, 76029189);
+        a = hh(a, b, c, d, x[i + 9], 4, -640364487);
+        d = hh(d, a, b, c, x[i + 12], 11, -421815835);
+        c = hh(c, d, a, b, x[i + 15], 16, 530742520);
+        b = hh(b, c, d, a, x[i + 2], 23, -995338651);
+        a = ii(a, b, c, d, x[i + 0], 6, -198630844);
+        d = ii(d, a, b, c, x[i + 7], 10, 1126891415);
+        c = ii(c, d, a, b, x[i + 14], 15, -1416354905);
+        b = ii(b, c, d, a, x[i + 5], 21, -57434055);
+        a = ii(a, b, c, d, x[i + 12], 6, 1700485571);
+        d = ii(d, a, b, c, x[i + 3], 10, -1894986606);
+        c = ii(c, d, a, b, x[i + 10], 15, -1051523);
+        b = ii(b, c, d, a, x[i + 1], 21, -2054922799);
+        a = ii(a, b, c, d, x[i + 8], 6, 1873313359);
+        d = ii(d, a, b, c, x[i + 15], 10, -30611744);
+        c = ii(c, d, a, b, x[i + 6], 15, -1560198380);
+        b = ii(b, c, d, a, x[i + 13], 21, 1309151649);
+        a = ii(a, b, c, d, x[i + 4], 6, -145523070);
+        d = ii(d, a, b, c, x[i + 11], 10, -1120210379);
+        c = ii(c, d, a, b, x[i + 2], 15, 718787259);
+        b = ii(b, c, d, a, x[i + 9], 21, -343485551);
+        a = ad(a, olda);
+        b = ad(b, oldb);
+        c = ad(c, oldc);
+        d = ad(d, oldd);
+    }
+    return rh(a) + rh(b) + rh(c) + rh(d);
+}
+
+/**
+ * 添加消息
+ * @param str
+ * @param is_log
+ */
+function addNotifyStr(str, is_log = true) {
+    if (is_log) {
+        log(`${str}\n`)
+    }
+    msg += `${str}\n`
+}
+
+// ============================================发送消息============================================ \\
+async function SendMsg(message) {
+    if (!message)
+        return;
+
+    if (Notify > 0) {
+        if ($.isNode()) {
+            var notify = require('./sendNotify');
+            await notify.sendNotify($.name, message);
+        } else {
+            $.msg(message);
+        }
+    } else {
+        log(message);
+    }
+}
+
+/**
+ * 随机延时1-30s，避免大家运行时间一样
+ * @returns {*|number}
+ */
+function delay() {
+    let time = parseInt(Math.random() * 100000);
+    if (time > 30000) { // 大于30s重新生成
+        return delay();
+    } else {
+        console.log('随机延时：', `${time}ms, 避免大家运行时间一样`)
+        return time; // 小于30s，返回
+    }
+}
+
+/**
+ * 随机数生成
+ */
+function randomString(e) {
+    e = e || 32;
+    var t = "QWERTYUIOPASDFGHJKLZXCVBNM1234567890",
+        a = t.length,
+        n = "";
+    for (i = 0; i < e; i++)
+        n += t.charAt(Math.floor(Math.random() * a));
+    return n
+}
+
+/**
+ * 随机整数生成
+ */
+function randomInt(min, max) {
+    return Math.round(Math.random() * (max - min) + min)
+}
+
+/**
+ * 获取毫秒时间戳
+ */
+function timestampMs() {
+    return new Date().getTime();
+}
+
+/**
+ * 获取秒时间戳
+ */
+function timestampS() {
+    return Date.parse(new Date()) / 1000;
+}
+
+function randomStrings(e) {
+    e = e || 32;
+    let t = "abcdefhijkmnprstwxyz2345678",
+        a = t.length,
+        n = "";
+    for (i = 0; i < e; i++)
+        n += t.charAt(Math.floor(Math.random() * a));
+    return n
+}
+/**
+ *
+ * 示例:$.time('yyyy-MM-dd qq HH:mm:ss.S')
+ *    :$.time('yyyyMMddHHmmssS')
+ *    y:年 M:月 d:日 q:季 H:时 m:分 s:秒 S:毫秒
+ *    其中y可选0-4位占位符、S可选0-1位占位符，其余可选0-2位占位符
+ * @param {string} fmt 格式化参数
+ * @param {number} 可选: 根据指定时间戳返回格式化日期
+ *
+ */
+function time(fmt, ts = null) {
+    const date = ts ? new Date(ts) : new Date();
+    let o = {
+        'M+': date.getMonth() + 1,
+        'd+': date.getDate(),
+        'H+': date.getHours(),
+        'm+': date.getMinutes(),
+        's+': date.getSeconds(),
+        'q+': Math.floor((date.getMonth() + 3) / 3),
+        S: date.getMilliseconds(),
+    };
+    if (/(y+)/.test(fmt))
+        fmt = fmt.replace(
+            RegExp.$1,
+            (date.getFullYear() + '').substr(4 - RegExp.$1.length)
+        );
+    for (let k in o)
+        if (new RegExp('(' + k + ')').test(fmt))
+            fmt = fmt.replace(
+                RegExp.$1,
+                RegExp.$1.length == 1 ?
+                o[k] :
+                ('00' + o[k]).substr(('' + o[k]).length)
+            );
+    return fmt;
+}
+
+/**
+ * 修改配置文件
+ */
+
+
+
+
+function Env(t, e) {
+    "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
+
+    class s {
+        constructor(t) {
+            this.env = t
+        }
+
+        send(t, e = "GET") {
+            t = "string" == typeof t ? {
+                url: t
+            } : t;
+            let s = this.get;
+            return "POST" === e && (s = this.post), new Promise((e, i) => {
+                s.call(this, t, (t, s, r) => {
+                    t ? i(t) : e(s)
+                })
+            })
+        }
+
+        get(t) {
+            return this.send.call(this.env, t)
+        }
+
+        post(t) {
+            return this.send.call(this.env, t, "POST")
+        }
+    }
+
+    return new class {
+        constructor(t, e) {
+            this.name = t, this.http = new s(this), this.data = null, this.dataFile = "box.dat", this.logs = [], this.isMute = !1, this.isNeedRewrite = !1, this.logSeparator = "\n", this.startTime = (new Date).getTime(), Object.assign(this, e), this.log("", `🔔${this.name}, 开始!`)
+        }
+
+        isNode() {
+            return "undefined" != typeof module && !!module.exports
+        }
+
+        isQuanX() {
+            return "undefined" != typeof $task
+        }
+
+        isSurge() {
+            return "undefined" != typeof $httpClient && "undefined" == typeof $loon
+        }
+
+        isLoon() {
+            return "undefined" != typeof $loon
+        }
+
+        toObj(t, e = null) {
+            try {
+                return JSON.parse(t)
+            } catch {
+                return e
+            }
+        }
+
+        toStr(t, e = null) {
+            try {
+                return JSON.stringify(t)
+            } catch {
+                return e
+            }
+        }
+
+        getjson(t, e) {
+            let s = e;
+            const i = this.getdata(t);
+            if (i) try {
+                s = JSON.parse(this.getdata(t))
+            } catch {}
+            return s
+        }
+
+        setjson(t, e) {
+            try {
+                return this.setdata(JSON.stringify(t), e)
+            } catch {
+                return !1
+            }
+        }
+
+        getScript(t) {
+            return new Promise(e => {
+                this.get({
+                    url: t
+                }, (t, s, i) => e(i))
+            })
+        }
+
+        runScript(t, e) {
+            return new Promise(s => {
+                let i = this.getdata("@chavy_boxjs_userCfgs.httpapi");
+                i = i ? i.replace(/\n/g, "").trim() : i;
+                let r = this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout");
+                r = r ? 1 * r : 20, r = e && e.timeout ? e.timeout : r;
+                const [o, h] = i.split("@"), n = {
+                    url: `http://${h}/v1/scripting/evaluate`,
+                    body: {
+                        script_text: t,
+                        mock_type: "cron",
+                        timeout: r
+                    },
+                    headers: {
+                        "X-Key": o,
+                        Accept: "*/*"
+                    }
+                };
+                this.post(n, (t, e, i) => s(i))
+            }).catch(t => this.logErr(t))
+        }
+
+        loaddata() {
+            if (!this.isNode()) return {}; {
+                this.fs = this.fs ? this.fs : require("fs"), this.path = this.path ? this.path : require("path");
+                const t = this.path.resolve(this.dataFile),
+                    e = this.path.resolve(process.cwd(), this.dataFile),
+                    s = this.fs.existsSync(t),
+                    i = !s && this.fs.existsSync(e);
+                if (!s && !i) return {}; {
+                    const i = s ? t : e;
+                    try {
+                        return JSON.parse(this.fs.readFileSync(i))
+                    } catch (t) {
+                        return {}
+                    }
+                }
+            }
+        }
+
+        writedata() {
+            if (this.isNode()) {
+                this.fs = this.fs ? this.fs : require("fs"), this.path = this.path ? this.path : require("path");
+                const t = this.path.resolve(this.dataFile),
+                    e = this.path.resolve(process.cwd(), this.dataFile),
+                    s = this.fs.existsSync(t),
+                    i = !s && this.fs.existsSync(e),
+                    r = JSON.stringify(this.data);
+                s ? this.fs.writeFileSync(t, r) : i ? this.fs.writeFileSync(e, r) : this.fs.writeFileSync(t, r)
+            }
+        }
+
+        lodash_get(t, e, s) {
+            const i = e.replace(/\[(\d+)\]/g, ".$1").split(".");
+            let r = t;
+            for (const t of i)
+                if (r = Object(r)[t], void 0 === r) return s;
+            return r
+        }
+
+        lodash_set(t, e, s) {
+            return Object(t) !== t ? t : (Array.isArray(e) || (e = e.toString().match(/[^.[\]]+/g) || []), e.slice(0, -1).reduce((t, s, i) => Object(t[s]) === t[s] ? t[s] : t[s] = Math.abs(e[i + 1]) >> 0 == +e[i + 1] ? [] : {}, t)[e[e.length - 1]] = s, t)
+        }
+
+        getdata(t) {
+            let e = this.getval(t);
+            if (/^@/.test(t)) {
+                const [, s, i] = /^@(.*?)\.(.*?)$/.exec(t), r = s ? this.getval(s) : "";
+                if (r) try {
+                    const t = JSON.parse(r);
+                    e = t ? this.lodash_get(t, i, "") : e
+                } catch (t) {
+                    e = ""
+                }
+            }
+            return e
+        }
+
+        setdata(t, e) {
+            let s = !1;
+            if (/^@/.test(e)) {
+                const [, i, r] = /^@(.*?)\.(.*?)$/.exec(e), o = this.getval(i),
+                    h = i ? "null" === o ? null : o || "{}" : "{}";
+                try {
+                    const e = JSON.parse(h);
+                    this.lodash_set(e, r, t), s = this.setval(JSON.stringify(e), i)
+                } catch (e) {
+                    const o = {};
+                    this.lodash_set(o, r, t), s = this.setval(JSON.stringify(o), i)
+                }
+            } else s = this.setval(t, e);
+            return s
+        }
+
+        getval(t) {
+            return this.isSurge() || this.isLoon() ? $persistentStore.read(t) : this.isQuanX() ? $prefs.valueForKey(t) : this.isNode() ? (this.data = this.loaddata(), this.data[t]) : this.data && this.data[t] || null
+        }
+
+        setval(t, e) {
+            return this.isSurge() || this.isLoon() ? $persistentStore.write(t, e) : this.isQuanX() ? $prefs.setValueForKey(t, e) : this.isNode() ? (this.data = this.loaddata(), this.data[e] = t, this.writedata(), !0) : this.data && this.data[e] || null
+        }
+
+        initGotEnv(t) {
+            this.got = this.got ? this.got : require("got"), this.cktough = this.cktough ? this.cktough : require("tough-cookie"), this.ckjar = this.ckjar ? this.ckjar : new this.cktough.CookieJar, t && (t.headers = t.headers ? t.headers : {}, void 0 === t.headers.Cookie && void 0 === t.cookieJar && (t.cookieJar = this.ckjar))
+        }
+
+        get(t, e = (() => {})) {
+            t.headers && (delete t.headers["Content-Type"], delete t.headers["Content-Length"]), this.isSurge() || this.isLoon() ? (this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, {
+                "X-Surge-Skip-Scripting": !1
+            })), $httpClient.get(t, (t, s, i) => {
+                !t && s && (s.body = i, s.statusCode = s.status), e(t, s, i)
+            })) : this.isQuanX() ? (this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
+                hints: !1
+            })), $task.fetch(t).then(t => {
+                const {
+                    statusCode: s,
+                    statusCode: i,
+                    headers: r,
+                    body: o
+                } = t;
+                e(null, {
+                    status: s,
+                    statusCode: i,
+                    headers: r,
+                    body: o
+                }, o)
+            }, t => e(t))) : this.isNode() && (this.initGotEnv(t), this.got(t).on("redirect", (t, e) => {
+                try {
+                    if (t.headers["set-cookie"]) {
+                        const s = t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString();
+                        s && this.ckjar.setCookieSync(s, null), e.cookieJar = this.ckjar
+                    }
+                } catch (t) {
+                    this.logErr(t)
+                }
+            }).then(t => {
+                const {
+                    statusCode: s,
+                    statusCode: i,
+                    headers: r,
+                    body: o
+                } = t;
+                e(null, {
+                    status: s,
+                    statusCode: i,
+                    headers: r,
+                    body: o
+                }, o)
+            }, t => {
+                const {
+                    message: s,
+                    response: i
+                } = t;
+                e(s, i, i && i.body)
+            }))
+        }
+
+        post(t, e = (() => {})) {
+            if (t.body && t.headers && !t.headers["Content-Type"] && (t.headers["Content-Type"] = "application/x-www-form-urlencoded"), t.headers && delete t.headers["Content-Length"], this.isSurge() || this.isLoon()) this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, {
+                "X-Surge-Skip-Scripting": !1
+            })), $httpClient.post(t, (t, s, i) => {
+                !t && s && (s.body = i, s.statusCode = s.status), e(t, s, i)
+            });
+            else if (this.isQuanX()) t.method = "POST", this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
+                hints: !1
+            })), $task.fetch(t).then(t => {
+                const {
+                    statusCode: s,
+                    statusCode: i,
+                    headers: r,
+                    body: o
+                } = t;
+                e(null, {
+                    status: s,
+                    statusCode: i,
+                    headers: r,
+                    body: o
+                }, o)
+            }, t => e(t));
+            else if (this.isNode()) {
+                this.initGotEnv(t);
+                const {
+                    url: s,
+                    ...i
+                } = t;
+                this.got.post(s, i).then(t => {
+                    const {
+                        statusCode: s,
+                        statusCode: i,
+                        headers: r,
+                        body: o
+                    } = t;
+                    e(null, {
+                        status: s,
+                        statusCode: i,
+                        headers: r,
+                        body: o
+                    }, o)
+                }, t => {
+                    const {
+                        message: s,
+                        response: i
+                    } = t;
+                    e(s, i, i && i.body)
+                })
+            }
+        }
+
+        time(t, e = null) {
+            const s = e ? new Date(e) : new Date;
+            let i = {
+                "M+": s.getMonth() + 1,
+                "d+": s.getDate(),
+                "H+": s.getHours(),
+                "m+": s.getMinutes(),
+                "s+": s.getSeconds(),
+                "q+": Math.floor((s.getMonth() + 3) / 3),
+                S: s.getMilliseconds()
+            };
+            /(y+)/.test(t) && (t = t.replace(RegExp.$1, (s.getFullYear() + "").substr(4 - RegExp.$1.length)));
+            for (let e in i) new RegExp("(" + e + ")").test(t) && (t = t.replace(RegExp.$1, 1 == RegExp.$1.length ? i[e] : ("00" + i[e]).substr(("" + i[e]).length)));
+            return t
+        }
+
+        msg(e = t, s = "", i = "", r) {
+            const o = t => {
+                if (!t) return t;
+                if ("string" == typeof t) return this.isLoon() ? t : this.isQuanX() ? {
+                    "open-url": t
+                } : this.isSurge() ? {
+                    url: t
+                } : void 0;
+                if ("object" == typeof t) {
+                    if (this.isLoon()) {
+                        let e = t.openUrl || t.url || t["open-url"],
+                            s = t.mediaUrl || t["media-url"];
+                        return {
+                            openUrl: e,
+                            mediaUrl: s
+                        }
+                    }
+                    if (this.isQuanX()) {
+                        let e = t["open-url"] || t.url || t.openUrl,
+                            s = t["media-url"] || t.mediaUrl;
+                        return {
+                            "open-url": e,
+                            "media-url": s
+                        }
+                    }
+                    if (this.isSurge()) {
+                        let e = t.url || t.openUrl || t["open-url"];
+                        return {
+                            url: e
+                        }
+                    }
+                }
+            };
+            if (this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(e, s, i, o(r)) : this.isQuanX() && $notify(e, s, i, o(r))), !this.isMuteLog) {
+                let t = ["", "==============📣系统通知📣=============="];
+                t.push(e), s && t.push(s), i && t.push(i), console.log(t.join("\n")), this.logs = this.logs.concat(t)
+            }
+        }
+
+        log(...t) {
+            t.length > 0 && (this.logs = [...this.logs, ...t]), console.log(t.join(this.logSeparator))
+        }
+
+        logErr(t, e) {
+            const s = !this.isSurge() && !this.isQuanX() && !this.isLoon();
+            s ? this.log("", `❗️${this.name}, 错误!`, t.stack) : this.log("", `❗️${this.name}, 错误!`, t)
+        }
+
+        wait(t) {
+            return new Promise(e => setTimeout(e, t))
+        }
+
+        done(t = {}) {
+            const e = (new Date).getTime(),
+                s = (e - this.startTime) / 1e3;
+            this.log("", `🔔${this.name}, 结束! 🕛 ${s} 秒`), this.log(), (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t)
+        }
+    }(t, e)
+}
