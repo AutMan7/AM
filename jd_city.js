@@ -1,5 +1,7 @@
 /*
-城城领现金
+来源 : github@AutMan7 https://github.com/AutMan7/AM.git
+活动：某东 城城领现金
+
 =================================Quantumultx=========================
 [task_local]
 #城城领现金
