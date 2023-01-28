@@ -3,7 +3,7 @@
 # @Author : github@AutMan7 https://github.com/AutMan7/TEL.git
 # @Time : 2023/1/28 16:10
 # cron "0 9,12 * * *" script-path=xxx.py,tag=匹配cron用
-# const $ = new Env('电信签到');
+# const $ = new Env('电信签到Pro');
 # -------------------------------
 
 """
