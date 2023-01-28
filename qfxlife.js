@@ -11,8 +11,10 @@
 查看请求头的x-ds-key
 变量格式：export qfxhd='' 多账号@隔开
 
+cron: 0 1-23/3 * * *
+const $ = new Env('起飞线生活');
 */
-// corn 0 */3 * * *
+
 
 const $ = new Env('起飞线生活');
 const axios = require('axios');
@@ -47,7 +49,6 @@ var timestamp = Math.round(new Date().getTime()).toString();
 
 
 
-            log(`\n============ 微信公众号：AutMan福利社 ============`)
             log(`\n=================== 共找到 ${qfxhdArr.length} 个账号 ===================`)
             if (debug) {
                 log(`【debug】 这是你的全部账号数组:\n ${qfxhdArr}`);
@@ -56,18 +57,21 @@ var timestamp = Math.round(new Date().getTime()).toString();
 
                 let num = index + 1
                 addNotifyStr(`\n==== 开始【第 ${num} 个账号】====\n`, true)
-
-                qfxhd = qfxhdArr[index];
-                restoken = qfxhd.match(/\.(.*?)\./)[1]
-                restoken=JSON.parse(new Buffer(restoken, 'base64').toString('utf8'))
-                restoken=restoken.data.refreshToken
-                await refreshTokens()
-                await lottery()
-                await lottery()
-                await lottery()
-                await info()
-                await first()
-                await water()
+                try{
+                    qfxhd = qfxhdArr[index];
+                    restoken = qfxhd.match(/\.(.*?)\./)[1]
+                    restoken=JSON.parse(new Buffer(restoken, 'base64').toString('utf8'))
+                    restoken=restoken.data.refreshToken
+                    await refreshTokens()
+                    await lottery()
+                    await lottery()
+                    await lottery()
+                    await info()
+                    await first()
+                    await water()
+                }catch{
+                    addNotifyStr(`\n==== 【第 ${num} 个账号】出现错误，可能是token已失效，执行下一个账号====\n`, true)
+                }
             }
             //await SendMsg(msg);
         }
@@ -646,6 +650,10 @@ async function Envs() {
             });
         } else if (qfxhd.indexOf("\n") != -1) {
             qfxhd.split("\n").forEach((item) => {
+                qfxhdArr.push(item);
+            });
+        } else if (qfxhd.indexOf("&") != -1) {
+            qfxhd.split("&").forEach((item) => {
                 qfxhdArr.push(item);
             });
         } else {
