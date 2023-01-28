@@ -4,7 +4,7 @@
 # @Author : github@AutMan7 https://github.com/AutMan7/TEL.git
 # @Time : 2023/1/28 17:10
 # cron "1 9,12 * * *" script-path=xxx.py,tag=匹配cron用
-# const $ = new Env('电信签到');
+# const $ = new Env('电信直播Pro');
 # -------------------------------
 """
 1. 脚本仅供学习交流使用, 请在下载后24h内删除
