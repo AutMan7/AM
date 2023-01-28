@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 # -- coding: utf-8 --
-# -------------------------------
-# @Author : github@limoruirui https://github.com/limoruirui  by院长修改
-# @Time : 2022/9/12 16:10
+# @Author : github@AutMan7 https://github.com/AutMan7/TEL.git
+# @Time : 2023/1/28 16:10
 # cron "0 9,12 * * *" script-path=xxx.py,tag=匹配cron用
 # const $ = new Env('电信签到');
 # -------------------------------
