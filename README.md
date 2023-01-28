@@ -5,6 +5,9 @@
 - 食用方法都在脚本内,请自行查看。
 - 觉得好用可以点个star。
 
+## 访问量
+![Visitor Count](https://profile-counter.glitch.me/Shawn220528/count.svg)
+
 # 京东车：http://jd.jdv4.top
 # 频道：https://t.me/jd_v4
 
