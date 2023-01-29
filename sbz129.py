@@ -1,13 +1,15 @@
-/*
-来源 : github@AutMan7 https://github.com/AutMan7/AM.git
-日期: 2023/1/26 22:20
+#!/usr/bin/python3
+# -- coding: utf-8 --
+# -------------------------------
+# @Author : github@AutMan7 https://github.com/AutMan7/AM.git
+# @Time : 2023/1/26 16:10
+# cron "1 9,12 * * *" script-path=xxx.py,tag=匹配cron用
+# const $ = new Env('赏帮赚');
 
-注册链接:http://xyinmw.ddkuaidobanchq6hb.cn/6381347
-域名：gateway.shangbangzhuan.com
-请求头：uuid:XXXXXXX
-变量格式：export sbzck='XXXXXXX'  多账户换行
-
-*/
+# 注册链接:http://xyinmw.ddkuaidobanchq6hb.cn/6381347
+# 域名：gateway.shangbangzhuan.com
+# 请求头：uuid:XXXXXXX
+# 变量格式：export sbzck='XXXXXXX'  多账户换行
 
 import json #line:1
 import os #line:2
