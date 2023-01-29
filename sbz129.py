@@ -105,7 +105,7 @@ def config ():#line:123
     print (wtgdata )#line:139
 def get_ck ():#line:142
     global token #line:143
-    if "sbztoken"in os .environ :#line:145
+    if "sbzck"in os .environ :#line:145
         O0000OO0O00O000OO =[]#line:146
         OO0O000OOOOO0OOO0 =os .environ ['sbzck'].replace ('http',"\n")#line:147
         OO0O000OOOOO0OOO0 =OO0O000OOOOO0OOO0 .split ('\n')#line:148
@@ -115,7 +115,7 @@ def get_ck ():#line:142
         if len (O0000OO0O00O000OO )>0 :#line:152
             return O0000OO0O00O000OO #line:153
         else :#line:154
-            print ("sbztoken变量未启用")#line:155
+            print ("sbzck变量未启用")#line:155
             sys .exit (1 )#line:156
     else :#line:157
         try :#line:158
