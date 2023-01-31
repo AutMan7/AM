@@ -2,7 +2,7 @@
 来源 : github@AutMan7 https://github.com/AutMan7/AM.git
 日期: 2023/1/31 22:00
 
-小程序:渤海宣传语 
+小程序:渤海宣传员 
 
 关键域名gms.ihaoqu.com
 查看请求里的uid跟token
