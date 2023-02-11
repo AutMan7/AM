@@ -48,9 +48,6 @@
  
   ql repo https://github.com/AutMan7/AM.git "" "backUp|tools|JS|logs|login"  "tools|JS|logs|login"
   
-  国内服务器
-  ql repo https://github.ruirui.fun/https://github.com/AutMan7/AM.git "" "backUp|tools|JS|logs|login"  "tools|JS|logs|login"
-
 
 
 
