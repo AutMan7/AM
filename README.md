@@ -26,7 +26,7 @@
     - PHONE_NUM 手机号码 (必须)
     - UNICOM_LOTTER 是否自动抽奖 (选填 True | False, 默认为是)
     
-    - 2.电信营业厅app(china_telecom.py  telecom_live_lotter.py)
+    - 2.电信营业厅app(china_telecom.py telecom_live_lotter.py)
     -TELECOM_LOTTERY 手机号码@密码 (密码中间以@分隔，多账号用&链接) 如：export TELECOM_LOTTERY ="189********@123456&199********@123456"
     - TELECOM_FOOD 宠物喂食次数 (选择)
     
@@ -68,7 +68,7 @@
 - Tools -- 存放一些脚本内经常需要重复使用的工具
 - JS -- 存放一些网站自己写的 过于复杂 不好使用python重写的加解密的js文件供python调用
 - backUp -- 存放已经无法正常执行的文件
-- logs -- 存放任务日志
+- logs -- 存放已失效脚本或文件
 ## 特别声明
 
 - 本仓库发布的脚本及其中涉及的任何解密分析脚本，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断。
