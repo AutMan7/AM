@@ -13,8 +13,6 @@
 4. 环境变量 UNICOM_GAME_ACCOUNT_INFO 格式 某通手机号#appid#token_online
     appid可抓包获取 安卓也有不抓包的方法 自行搜索
     token_online 抓包获取 搜索 mobileService/onLine 切换账号可触发此数据包 此数据包包含 token_online和appid
-    login文件夹内有短信验证码登录(经过几天的反馈测试 不一定能用 有人可以有人不行 暂未知道原因) 抄自小一佬 github@https://github.com/xream 感谢
-    默认不添加新crontab 需要手动新建 task limoruirui_misaka/login/unicom_login.py
 5. 特别说明
     i.第一次运行会因为没有积分而无法进行积分抽奖 可再运行一次或者等第二天再抽奖即可 目前场次不多 不会每天都抽
     ii. 兑换话费已写 但未调用 有需要自行修改调用
