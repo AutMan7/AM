@@ -8,7 +8,8 @@
 ## 访问量
 ![Visitor Count](https://profile-counter.glitch.me/Shawn220528/count.svg)
 
-# 京东车：http://jd.jdv4.top
+# 京东车①：http://jd.jdv4.top
+# 京东车②：http://lm.jdv4.top
 # 频道：https://t.me/jd_v4
 
 
