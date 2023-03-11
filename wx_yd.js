@@ -1,5 +1,8 @@
 /*
-微信阅读
+来源 : github@AutMan7 https://github.com/AutMan7/AM.git
+日期: 2023/3/10 22:00
+
+微信阅读1
 需要青龙环境
 入口，微信打开 -> https://zl1222211706-1314804847.cos.ap-nanjing.myqcloud.com/index.html?upuid=10732605
 抓包m.*.shop域名下cookie,填入环境变量 yuedu，多账户换行隔开
